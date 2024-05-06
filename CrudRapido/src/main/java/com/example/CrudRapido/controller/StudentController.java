@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/v1/students")
+
 public class StudentController {
 
     @Autowired
@@ -28,12 +29,12 @@ public class StudentController {
     }
 
     @DeleteMapping("/{studentId}")
-    public void deleteStudent(@PathVariable("StudentId") Long studentId) {
+    public void deleteStudent(@PathVariable("studentId") Long studentId) {
         studentService.deleteStudent(studentId);
     }
 
     @GetMapping("/{studentId}")
-    public Optional<Student> getStudentbyId(@PathVariable("StudentId") Long studentId) {
+    public Optional<Student> getStudentbyId(@PathVariable("studentId") Long studentId) {
        return studentService.getStudent(studentId);
     }
 
